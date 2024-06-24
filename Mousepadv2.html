@@ -21,18 +21,28 @@
             font-size: 1em;
         }
         
-        header {
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
-}
-            
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .logo img {
+            width: 55px;
+            height: auto;
+            margin-right: 10px;
         }
         .container {
             width: 90%;
@@ -123,9 +133,12 @@
     </style>
 </head>
 <body>
-      <header>
-        <h2>Electronic Accessories Store</h2>
-    </header>
+    <header>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/YoussefHu1/Test/main/Round%20Photo_Jun242024_211818.png" width="55" alt="Store Logo">
+    </div>
+
+</header>
    
     <nav>
         <a href="index.html">Home</a>

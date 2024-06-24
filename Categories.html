@@ -9,36 +9,50 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f4f4f4;
         }
-    header {
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-        color: #fff;
-        text-align: center;
-        padding: 10px 0;
-    }nav {
-            background: linear-gradient(to right, #5a11ba, #2550fc);
-            overflow: hidden;
-            text-align: center;
-        }
-        nav a {
-            display: inline-block;
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: #fff;
             text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-            font-size: 1em;
+            padding: 10px 0;
         }
-    
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .logo img {
+            width: 55px;
+            height: auto;
+            margin-right: 10px;
+        }
+    nav {
+        background: linear-gradient(to right, #5a11ba, #2550fc);
+        overflow: hidden;
+        text-align: center;
+    }
+    nav a {
+        display: inline-block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 1em;
+        margin: 0 10px; /* Add margin to create space between links */
+    }
     .categories {
         display: grid;
         grid-template-columns: repeat(2, 170px);
-        grid-gap: 20px;
+        grid-gap: 5px;
+        justify-content: center; /* Center the categories */
+        margin: 10px 0; /* Add some margin for better spacing */
     }
     .category {
         background-color: #ffffff;
         border: 1px solid #ccc;
-        padding: 10px;
+        padding: 5px;
         text-align: center;
         transition: transform 0.2s ease-in-out;
     }
@@ -60,7 +74,10 @@
 <body>
 
 <header>
-    <h2>Electronic Accessories Store</h2>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/YoussefHu1/Test/main/Round%20Photo_Jun242024_211818.png" width="55" alt="Store Logo">
+    </div>
+
 </header>
 
 <nav>
@@ -99,6 +116,25 @@
             <div>Controllers</div>
         </a>
     </div>
+        <div class="category">
+        <a href="Screens.html">
+            <img src="https://cdn11.bigcommerce.com/s-sp9oc95xrw/images/stencil/original/image-manager/hn21.png?t=1681570339&_gl=1*1c2mssb*_ga*NzgwNDI2MzkxLjE2ODAzNjE4Mzk.*_ga_WS2VZYPC6G*MTY4MTU1OTAyMi4xMy4xLjE2ODE1Njk2NzguNDcuMC4w" alt="Controllers">
+            <div>Screen</div>
+        </a>
+    </div>
+    <div class="category">
+        <a href="ram.html">
+            <img src="https://cdn11.bigcommerce.com/s-sp9oc95xrw/images/stencil/original/image-manager/hn24.png?t=1681570598&_gl=1*1s1xpg2*_ga*NzgwNDI2MzkxLjE2ODAzNjE4Mzk.*_ga_WS2VZYPC6G*MTY4MTU1OTAyMi4xMy4xLjE2ODE1Njk2NzguNDcuMC4w" alt="Controllers">
+            <div>Ram</div>
+        </a>
+    </div>
+    <div class="category">
+        <a href="CPU.html.html">
+            <img src="https://cdn11.bigcommerce.com/s-sp9oc95xrw/images/stencil/original/image-manager/hn20.png?t=1681570135&_gl=1*156aw6p*_ga*NzgwNDI2MzkxLjE2ODAzNjE4Mzk.*_ga_WS2VZYPC6G*MTY4MTU1OTAyMi4xMy4xLjE2ODE1Njk2NzguNDcuMC4w" alt="Controllers">
+            <div>CPU</div>
+        </a>
+    </div>
+    
     <!-- Add more categories as needed -->
 </div>
 

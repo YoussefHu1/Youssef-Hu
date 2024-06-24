@@ -17,6 +17,44 @@
             text-align: center;
             padding: 10px 0;
         }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .logo img {
+            width: 55px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 1em;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            height: 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
         nav {
             background: linear-gradient(to right, #5a11ba, #2550fc);
             overflow: hidden;
@@ -92,38 +130,6 @@
             z-index: 1000;
             width: 100%;
             padding: 10px 0;
-            ;
-        }
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            background-color: rgba(0, 0, 0, 0); /* Fully transparent color */;
-            padding: 10px 0;
-        }
-        .search-bar input[type="text"] {
-            padding: 10px;
-            width: 300px;
-            font-size: 1em;
-          
-            
-            outline: none;
-        }
-        .search-bar button {
-            padding: 10px 10px;
-            height: 40px;
-            background-color: #4CAF50;
-            color: white;
-            border: 1px solid #4CAF50;
-            
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
-            outline: none;
-        }
-        .search-bar button:hover {
-            background-color: #45a049;
         }
         @media (min-width: 769px) {
             .product img {
@@ -133,26 +139,24 @@
     </style>
 </head>
 <body>
-          
-    <header>
-        <h2>Electronic Accessories Store</h2>
-    </header>
-   
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Categories.html">Categories</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
     
-    <div class="sticky-search-bar">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search products...">
-            <button type="button" onclick="searchProducts()">Search</button>
-        </div>
+<header>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/YoussefHu1/Test/main/Round%20Photo_Jun242024_211818.png" width="55" alt="Store Logo">
     </div>
-    
-    <div class="container">
-        <!-- Wireless Controller Product -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button type="button" onclick="searchProducts()">Search</button>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="Categories.html">Categories</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="container">
         <div class="product" onclick="location.href='Wireless Headphone.html';">
             <img src="https://raw.githubusercontent.com/HadyGrowlancher/ZahiStore/main/dc21167b780339c35138099f6d2eaf8f__93089-removebg-preview.png" width="400" alt="Wirless X7 Controller">
             <div class="product-details">
@@ -221,44 +225,45 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        function searchProducts() {
-            var input, filter, products, product, title, i, txtValue;
-            input = document.getElementById('searchInput');
-            filter = input.value.toUpperCase();
-            products = document.getElementsByClassName('product');
-            var found = false; // Flag to track if any products are found
+<script>
+    function searchProducts() {
+        var input, filter, products, product, title, i, txtValue;
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        products = document.getElementsByClassName('product');
+        var found = false; // Flag to track if any products are found
 
-            for (i = 0; i < products.length; i++) {
-                product = products[i];
-                title = product.querySelector('.product-title'); // Use querySelector to find title
-                txtValue = title.textContent || title.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    product.style.display = ''; // Show matching product
-                    found = true; // Mark as found if at least one product matches
-                } else {
-                    product.style.display = 'none'; // Hide non-matching product
-                }
-            }
-
-            // Show or hide "Item not found" message based on found flag
-            var notFoundMessage = document.getElementById('notFoundMessage');
-            if (!found) {
-                // Create "Item not found" message if it doesn't exist
-                if (!notFoundMessage) {
-                    var container = document.querySelector('.container');
-                    container.innerHTML += '<div id="notFoundMessage" class="about-section"><h2>Item not found</h2></div>';
-                } else {
-                    notFoundMessage.style.display = 'block'; // Show message if no products are found
-                }
+        for (i = 0; i < products.length; i++) {
+            product = products[i];
+            title = product.querySelector('.product-title'); // Use querySelector to find title
+            txtValue = title.textContent || title.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                product.style.display = ''; // Show matching product
+                found = true; // Mark as found if at least one product matches
             } else {
-                if (notFoundMessage) {
-                    notFoundMessage.style.display = 'none'; // Hide message if products are found
-                }
+                product.style.display = 'none'; // Hide non-matching product
             }
         }
-    </script>
+
+        // Show or hide "Item not found" message based on found flag
+        var notFoundMessage = document.getElementById('notFoundMessage');
+        if (!found) {
+            // Create "Item not found" message if it doesn't exist
+            if (!notFoundMessage) {
+                var container = document.querySelector('.container');
+                container.innerHTML += '<div id="notFoundMessage" class="about-section"><h2>Item not found</h2></div>';
+            } else {
+                notFoundMessage.style.display = 'block'; // Show message if no products are found
+            }
+        } else {
+            if (notFoundMessage) {
+                notFoundMessage.style.display = 'none'; // Hide message if products are found
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
